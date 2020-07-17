@@ -1,0 +1,472 @@
+	#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+#include<time.h>
+#include<math.h>
+#include<process.h>
+#include<stdlib.h>
+
+//delay 
+void delay(double number_of_seconds)
+{
+    double milli_seconds = 1000.0 * number_of_seconds;
+    clock_t start_time = clock();
+    while (clock() < start_time + milli_seconds);
+}
+
+
+
+
+
+//string in a string
+int present(char s[],int n)
+{
+	int kk=strlen(s);
+	char *sp;
+	char s1[]=".com";
+	sp=strstr(s,s1);
+	int i,flag=0;
+	for(i=0;i<kk;i++)
+	{
+		if(sp)
+		{	
+		if(s[i]=='@')
+		flag=1;
+		}
+	}
+	if(flag==1)
+	return 1;
+	else
+	return 0;
+}
+
+
+
+
+
+
+
+
+//no of digits
+int nod(char s[],int n,int ch)
+{
+	int i;int flag=0;
+	if(ch==n)
+	{
+	for(i=0;i<n;i++)
+	{
+		if(s[i]>='0'&&s[i]<='9')
+		{
+		flag=1;
+	    }
+	    else
+	    {
+	    	flag=0;
+	    	break;
+	    }
+	}
+    }
+	if(flag==0)
+	return 0;
+	else
+	return 1;
+}
+
+
+
+
+//age
+int aged(char s[],int n)
+{
+int sx=atoi(s);
+if(sx<100&&sx>8)
+return 1;
+else
+return 0;	
+}
+
+
+
+//printing the name
+void print(char s[],int n)
+{
+	printf("%s",s);
+}
+//main function
+int main()
+{
+	char pin[6],name[1000],number[10],age[3],mail[1000],lname[100],lmodel[1000],lward[20],add[1000];
+	char scb[]="SCB";
+	char pxd[]="PXD";
+	char cod[]="COS";
+	char osd[]="OSD";
+	char kmm[]="KMM";
+	char kbd[]="KBD";
+	char okd[]="OKD";
+	char lqs[]="LQS";
+	char kms[]="KMS";
+	char bok[]="BOK";
+	char usb[]="USB";
+	char doq[]="DOQ";
+	char cun[]="CUN";
+	char lcc[]="LCC";
+	
+	
+	
+	
+	
+	printf("\n\n");
+	int i;int c=0;
+	for(i=0;i<10;i--)
+	{
+		delay(0.05);
+		printf("-");
+		c++;
+		if(c==20)
+		{
+	    delay(0.1);
+	    	    printf("Q");
+	    delay(0.1);
+	    	    printf("U");
+	    delay(0.1);
+	    	    printf("A");
+	    delay(0.1);
+	    	    printf("N");
+	    delay(0.1);
+	    	    printf("T");
+	    delay(0.1);
+	    	    printf("U");
+	    delay(0.1);
+	    	    printf("M ");
+	    delay(0.1);
+	    	    printf("L");
+	    delay(0.1);
+	    	    printf("A");
+	    delay(0.1);
+	    	    printf("P");
+	    delay(0.1);
+	    	    printf("T");
+	    delay(0.1);
+	    	    printf("O");
+	    delay(0.1);
+	    	    printf("P ");
+	    delay(0.1);
+	    	    printf("R");
+	    delay(0.1);
+	    	    printf("E");
+	    delay(0.1);
+	    	    printf("P");
+	    delay(0.1);
+	    	    printf("A");
+	    delay(0.1);
+	    	    printf("I");
+	    delay(0.1);
+	    	    printf("R ");
+	    delay(0.1);
+	    	    printf("S");
+	    delay(0.1);
+	    	    printf("H");
+	    delay(0.1);
+	    	    printf("O");
+	    delay(0.1);
+	    	    printf("P");
+	    delay(0.1);
+		}
+		if(c==45)
+		break;
+    }
+    printf("\n\n\n\n---------------  | PERSONAL DETAILS OF CUSTOMER |  ------------------\n\n");
+    printf("\n\n |Enter Name :|                                    ");
+    gets(name);
+    char ncpy[strlen(name)];
+	strcpy(ncpy,name);
+	//mobile number
+    for(i=0;i<10;i--)
+    {
+    printf("\n\n |Enter Contact Number :|                          +91 ");
+    gets(number);
+    int hh=nod(number,strlen(number),10);
+    if(!(hh==1))
+    {
+    printf("\n\n [Incorrect Contact Number ! TRY AGAIN]");
+    printf("\n-----------------------------------------------------------------------\n");
+	}
+	else
+	{	break;
+    }
+	}
+	// Done!
+	
+	
+	
+	
+	
+	//age of customer
+	int lla=strlen(age);
+    for(i=0;i<10;i--)
+    {
+    	printf("\n\n |Enter Age :|                                     ");
+        gets(age);
+    	int dd=aged(age,lla);
+    	if(dd==1)
+    	{
+    		break;
+    	}
+    	else
+    	{
+        printf("\n\n [Incorrect Age ! TRY AGAIN]");
+        printf("\n-----------------------------------------------------------------------\n");
+		}
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	//email id 
+	for(i=0;i<10;i--)
+    {
+    printf("\n\n |Enter Email ID :|                                ");
+    gets(mail);
+    int len=strlen(mail);
+    if(present(mail,len)==0)
+    {
+    printf("\n [Incorrect Email ID ! TRY AGAIN]");
+    printf("\n-----------------------------------------------------------------------\n");
+    }
+	else
+	{
+	break;
+	}
+    }
+    
+    
+    
+    
+    
+    //address
+    for(i=0;i<1;i--)
+    {	
+    printf("\n\n |Enter Address :|                                 ");
+    gets(add);
+	if(add[0]!='\0')
+	break;
+	else
+	printf("No Input");
+    }
+	
+	
+	
+	//pincode
+    for(i=0;i<10;i--)
+    {
+    printf("\n\n |Enter Pincode :|                                 ");
+    gets(pin);
+	int gg=nod(pin,strlen(pin),6);
+    if(gg==0)
+    {
+    printf("\n\n [Incorrect Contact Number ! TRY AGAIN]");
+    printf("\n\n-------------------------------------------------------------------\n\n");
+    }
+	else
+	{
+    break;
+	}	
+	}
+    
+    
+    
+    
+    
+    delay(1);
+    printf("\n\n--------------------    | DETAILS OF LAPTOP :|     ------------------\n");
+    delay(1);
+	printf("\n\n |Enter Name Of The Company :|                     ");
+    gets(lname);     
+    printf("\n\n |Enter Model Name & Number :|                     ");
+    gets(lmodel);     
+	printf("\n\n |Enter Warranty Expiration Date (dd/mm/yyyy) :|\n(only if warranty persists or type 'n')            ");
+    gets(lward);	
+	
+	
+	
+	
+	// problem dealing
+	printf("\n\n\n");
+	
+	FILE *lrs;
+	char x;
+	lrs=fopen("table1.c","r");
+	x=fgetc(lrs);
+	while(x!=EOF)
+	{
+		x=fgetc(lrs);
+		printf("%c",x);
+	}     
+	fclose(lrs);
+	delay(0.5);
+	printf("\n\n\n");
+	printf("\n-----------------------------------------------------------------------\n");
+	printf("\n\n\n");
+	printf("    >>>>  Hello Fella! You can enlist all the problem of your laptop \n\n");
+	printf("    ----  by writing the code of the particular issue (written after \n\n");
+	printf("    ----  '[]'). For example: Liquid Spilt has code [LQS] so you can \n\n");
+	printf("    ----  type LQS etc. You can check the cost  of fixing each issue.\n\n");
+	printf("    ----  Good Luck! \n\n");
+	printf("    ----  CC stands for -Company's Cost. Some parts depend on company\n\n");
+	printf("    ----  manufacture and they have varied prices set by  themselves.\n\n");
+	printf("\n\n\n\n\n");
+	int q;
+    int sum=0;
+	char qr[50];
+	printf("\n\n |Enter Number Of Queries :|                       \n\n");
+	scanf("%d",&q);int flag;
+	for(i=0;i<q;i++)
+    {
+    	flag=0;
+    	printf("\n|Enter Query No. %d :|                       ",i+1);
+    	scanf("%s",&qr);
+        if(stricmp(qr,lqs)==0)
+        {
+		sum+=700;
+        flag=1;
+        strcpy(lqs,"non");
+		continue;
+		}
+		if(stricmp(qr,scb)==0)
+        {
+		sum+=850;
+        flag=1;
+        strcpy(scb,"non");
+        continue;
+		}
+		if(stricmp(qr,pxd)==0)
+        {
+		sum+=700;
+        flag=1;
+        strcpy(pxd,"non");
+        continue;
+		}
+		if(stricmp(qr,okd)==0)
+        {
+		sum+=450;
+		flag=1;
+        strcpy(okd,"non");		
+		continue;
+        }
+		if(stricmp(qr,kmm)==0)
+        {
+		sum+=650;
+		flag=1;
+        strcpy(kmm,"non");		
+		continue;
+        }
+		if(stricmp(qr,kbd)==0)
+        {
+		sum+=850;
+        flag=1;
+        strcpy(kbd,"non");        
+        continue;
+		}
+		if(stricmp(qr,usb)==0)
+        {
+		sum+=900;
+        flag=1;
+        strcpy(usb,"non");
+        continue;        
+		}
+		if(stricmp(qr,kms)==0)
+        {
+		sum+=550;
+        flag=1;
+        strcpy(kms,"non");        
+        continue;
+		}
+		if(stricmp(qr,bok)==0)
+        {
+		sum+=1000;
+        flag=1;
+        strcpy(bok,"non");        
+        continue;
+		}
+		if(stricmp(qr,doq)==0)
+        {
+		sum+=1100;
+        flag=1;
+        strcpy(doq,"non");        
+        continue;
+		}
+		if(stricmp(qr,cun)==0)
+        {
+		sum+=950;
+	    flag=1;
+        strcpy(cun,"non");	    
+	    continue;
+		}
+        if(stricmp(qr,lcc)==0)
+        {
+		sum+=1200;
+	    flag=1;
+        strcpy(lcc,"non");	    
+	    continue;
+		}
+		if(flag==0)
+		{
+        printf("\n\n [Incorrect Input (Either You Have Entered Wrong Input Or Same Input Twice) ! TRY AGAIN]");
+        printf("\n\n--------------------------------------------------------------------\n\n");	
+		i=i-1;
+		continue;
+		}
+    }
+    printf("\n\n\n\n");
+	printf("\n\n-----------------------------------------------------------------------\n\n\n\n");	
+	system("cls");
+    printf("\n\n\n\n");
+	printf("\n Congratulations! Your Laptop Will Be Repaired Soon. Thankyou For Visiting.\n ");
+	printf("\n");
+	printf("\n\n-------------------      |Customer's Bill :|      -----------------------\n\n");
+    printf("\n");
+	printf("\n\n                  ---------|Customer's Details :|---------             \n\n");
+
+    printf("|Customer's Name :|\n   ");
+    puts(ncpy);
+    printf("\n\n");
+    printf("|Age :|\n   ");
+    puts(age);
+    printf("\n\n");
+    printf("|Contact Number :|\n   ");
+    puts(number);
+    printf("\n\n");
+    printf("|Email ID :|\n   ");
+    puts(mail);
+    printf("\n\n");
+    printf("|Address :|\n   ");
+    puts(add);
+    printf("\n\n");
+    printf("|Pincode :|\n   ");
+    puts(pin);
+    printf("\n\n");
+	printf("\n\n                 ---------- |Laptop's Details :|---------              \n\n");
+
+    printf("|Laptop's Name :|\n   ");
+    puts(lname);
+    printf("\n\n");
+    printf("|Model Name & Number :|\n   ");
+    puts(lmodel);
+    printf("\n\n");
+	printf("|Warranty Date :|\n   ");
+    if(lward[0]='n')
+    printf("Not Applicable");
+    else
+	puts(lward);
+    printf("\n\n");
+    printf("\n\n-----------------------------------------------------------------------\n\n");	
+    printf("Your Final Bill                                        : Rs. %d /-",sum);	
+    printf("\n\n-----------------------------------------------------------------------\n\n");	
+
+	getch();
+}
